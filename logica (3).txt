@@ -1,0 +1,67 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Estrutura que representa uma carta de País
+struct Carta {
+    string nome;
+    int populacao;   // em milhões
+    int area;        // em mil km²
+};
+
+int main() {
+    // Criando duas cartas
+    Carta pais1, pais2;
+
+    // Preenchendo manualmente as cartas
+    pais1.nome = "Brasil";
+    pais1.populacao = 214;   // milhões
+    pais1.area = 8516;       // mil km²
+
+    pais2.nome = "Argentina";
+    pais2.populacao = 45;    
+    pais2.area = 2780;       
+
+    // Escolha de critério para comparação
+    int criterio;
+    cout << "Escolha o criterio de comparacao:\n";
+    cout << "1 - Populacao\n";
+    cout << "2 - Area\n";
+    cout << "Digite sua opcao: ";
+    cin >> criterio;
+
+    // Estruturas de decisão para comparar
+    if (criterio == 1) {
+        cout << "\nComparando populacao...\n";
+        if (pais1.populacao > pais2.populacao) {
+            cout << pais1.nome << " vence com " << pais1.populacao 
+                 << " milhoes de habitantes contra " 
+                 << pais2.populacao << ".\n";
+        } else if (pais2.populacao > pais1.populacao) {
+            cout << pais2.nome << " vence com " << pais2.populacao 
+                 << " milhoes de habitantes contra " 
+                 << pais1.populacao << ".\n";
+        } else {
+            cout << "Empate! Ambos possuem a mesma populacao.\n";
+        }
+    } 
+    else if (criterio == 2) {
+        cout << "\nComparando area...\n";
+        if (pais1.area > pais2.area) {
+            cout << pais1.nome << " vence com " << pais1.area 
+                 << " mil km² contra " 
+                 << pais2.area << ".\n";
+        } else if (pais2.area > pais1.area) {
+            cout << pais2.nome << " vence com " << pais2.area 
+                 << " mil km² contra " 
+                 << pais1.area << ".\n";
+        } else {
+            cout << "Empate! Ambos possuem a mesma area.\n";
+        }
+    } 
+    else {
+        cout << "Opcao invalida!\n";
+    }
+
+    return 0;
+}
